@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MvcEcommerceFashion.Models.EntityModels;
 using MyApplication.Data;
+using Microsoft.Extensions.DependencyInjection;
+using MvcEcommerceFashion.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<EntityDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EntityDbContext") ?? throw new InvalidOperationException("Connection string 'EntityDbContext' not found.")));
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
