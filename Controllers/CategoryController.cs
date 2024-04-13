@@ -53,7 +53,7 @@ namespace MvcEcommerceFashion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,Description,Id,InsertedAt,UpdatedAt")] Category category)
+        public async Task<IActionResult> Create([Bind("Name,Description,Id,CreatedAt,UpdatedAt")] Category category)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace MvcEcommerceFashion.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Name,Description,Id,InsertedAt,UpdatedAt")] Category category)
+        public async Task<IActionResult> Edit(int id, [Bind("Name,Description,Id,CreatedAt,UpdatedAt")] Category category)
         {
             if (id != category.Id)
             {

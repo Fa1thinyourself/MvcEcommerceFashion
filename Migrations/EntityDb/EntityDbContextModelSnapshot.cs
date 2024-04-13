@@ -31,13 +31,13 @@ namespace MvcEcommerceFashion.Migrations.EntityDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<DateTime>("InsertedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasColumnOrder(998);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -62,13 +62,16 @@ namespace MvcEcommerceFashion.Migrations.EntityDb
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<DateTime>("InsertedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasColumnOrder(998);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("IsOutOfStock")
                         .HasColumnType("bit");

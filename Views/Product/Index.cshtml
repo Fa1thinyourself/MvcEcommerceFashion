@@ -16,6 +16,9 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
@@ -28,7 +31,7 @@
                 @Html.DisplayNameFor(model => model.IsOutOfStock)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.InsertedAt)
+                @Html.DisplayNameFor(model => model.CreatedAt)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.UpdatedAt)
@@ -43,6 +46,9 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
@@ -55,7 +61,7 @@
                 @Html.DisplayFor(modelItem => item.IsOutOfStock)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.InsertedAt)
+                @Html.DisplayFor(modelItem => item.CreatedAt)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UpdatedAt)
