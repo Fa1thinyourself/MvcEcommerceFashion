@@ -9,6 +9,10 @@ indent_style = space
 # (Please don't specify an indent_size here; that has too many unintended consequences.)
 spelling_exclusion_path = SpellingExclusions.dic
 
+# CSHTML files
+[*.cshtml]
+indent_size = 2
+
 # Code files
 [*.{cs,csx,vb,vbx}]
 indent_size = 2
