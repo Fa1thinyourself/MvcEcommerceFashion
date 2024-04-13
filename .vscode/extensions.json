@@ -1,0 +1,22 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
+  // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+  // List of extensions which should be recommended for users of this workspace.
+  "recommendations": [
+    "doggy8088.netcore-editorconfiggenerator",
+    "ms-dotnettools.vscode-dotnet-runtime",
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+    "EditorConfig.EditorConfig",
+    "dineug.vuerd-vscode",
+    "doggy8088.netcore-snippets",
+    "ms-dotnettools.vscodeintellicode-csharp",
+    "aliasadidev.nugetpackagemanagergui",
+    "logerfo.sln-support",
+    "ms-azuretools.vscode-docker",
+    "cweijan.vscode-database-client2",
+    "Wattenberger.footsteps",
+  ],
+  // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
+  "unwantedRecommendations": []
+}
