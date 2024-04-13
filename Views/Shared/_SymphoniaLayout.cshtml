@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SYMPHONIA Fashion Shop - @ViewData["Title"]</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/lib/slick/slick.css" />
+  <link rel="stylesheet" href="~/css/bootstrap-icons.css">
+  @* <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> *@
+  <link rel="stylesheet" href="~/MvcEcommerceFashion.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+  @* Spinner Part *@
+  <section class="preloader">
+    <div class="spinner">
+      <span class="sk-inner-circle"></span>
+    </div>
+  </section>
+
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">
+          <strong>SYMPHONIA</strong>
+        </a>
+
+        <div class="d-lg-none">
+          <input type="text" placeholder="Search Products" name="search">
+          <a type="submit"><i class="bi-search custom-icon me-3"></i></a>
+
+          @* TODO: Link to Account page *@
+          <a href="#"><i class="bi-person custom-icon me-3"></i></a>
+          @* TODO: link to Mycart page *@
+          <a href="#""><i class =" bi-bag custom-icon"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+          @* TODO: Link to Privacy page *@
+              <a class="nav-link active" href="#">Privacy Policies</a>
+            </li>
+
+            <li class="nav-item">
+          @* TODO: Link to Products page *@
+              <a class="nav-link" href="#">Products</a>
+            </li>
+
+            <li class="nav-item">
+          @* TODO: Link to About page *@
+              <a class="nav-link" href="about.html">About us</a>
+            </li>
+
+          </ul>
+
+          <div class="d-none d-lg-block">
+          @* TODO: Search Input doing absolutely nothing *@
+            <input type="text" placeholder="Search products" name="search">
+            <a type="submit"><i class="bi-search custom-icon me-3"></i></a>
+          @* TODO: Link to account page *@
+            <a href="#"><i class="bi-person custom-icon me-3"></i></a>
+          @* TODO: Link to mycart page *@
+            <a href="#""><i class =" bi-bag custom-icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+    @RenderBody()
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-10 me-auto mb-4">
+          <h4 class="text-white mb-3">
+            @* TODO: Link to Index Page *@
+            <a href="#">SYMPHONIA</a>
+          </h4>
+          <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">
+            Copyright © Summer 2024 <strong>GROUP 1</strong>
+          </p>
+          <br>
+        </div>
+
+        <div class="col-lg-5 col-8">
+          <ul class="footer-menu d-flex flex-wrap">
+            @* TODO: Link to About page *@
+            <li class="footer-menu-item">
+              <a href="about.html" class="footer-menu-link"> About us</a>
+            </li>
+            @* TODO: Link to Privacy Policies page *@
+            <li class="footer-menu-item">
+              <a href="#" class="footer-menu-link"> Privacy Policies</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-4">
+          <h5 class="text-black mb-3">Social</h5>
+          <ul class="social-icon">
+            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+            <li><a href="#" class="social-icon-link bi-skype"></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/lib/headroom/Headroom.js"></script>
+  <script src="~/lib/slick/slick.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
