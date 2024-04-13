@@ -1,0 +1,19 @@
+services:
+  mssql:
+    container_name: sql-server
+    build:
+      context: ./Docker/mssql
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Whereismybee2005@@"
+      MSSQL_PID: "Express"
+    # command: tail -f /dev/null
+    entrypoint: ./entrypoint.sh
+    ports:
+      - 1433:1433
+    volumes:
+      - sql-volume:/var/opt/mssql
+volumes:
+  sql-volume:
