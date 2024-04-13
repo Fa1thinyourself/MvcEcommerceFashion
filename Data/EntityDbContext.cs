@@ -15,5 +15,6 @@ namespace MvcEcommerceFashion.Data
         }
 
         public DbSet<MvcEcommerceFashion.Models.EntityModels.Product> Product { get; set; } = default!;
+        public DbSet<Category> Category { get; set; } = default!;
     }
 }
