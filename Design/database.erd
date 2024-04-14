@@ -4,8 +4,8 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -97,
-    "scrollLeft": 0,
+    "scrollTop": -524,
+    "scrollLeft": -800,
     "zoomLevel": 1,
     "show": 511,
     "database": 2,
@@ -61,6 +61,7 @@
           "wMOt8JjlcjxNnyWSE36Lf",
           "jAC3F1MKzYFRrOAJFjtTQ",
           "6BFvhx_ono1PGHPcz8WCz",
+          "96WQZH7SPrrSb-xheUbJV",
           "3w4xRWhUYokodLdysnlFz",
           "kdLdB35yi47KqcTTczYZn",
           "zMAz66KkCtO7sJLNpNsSU",
@@ -72,6 +73,7 @@
           "wMOt8JjlcjxNnyWSE36Lf",
           "jAC3F1MKzYFRrOAJFjtTQ",
           "6BFvhx_ono1PGHPcz8WCz",
+          "96WQZH7SPrrSb-xheUbJV",
           "3w4xRWhUYokodLdysnlFz",
           "kdLdB35yi47KqcTTczYZn",
           "zMAz66KkCtO7sJLNpNsSU",
@@ -90,7 +92,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1713023375015,
+          "updateAt": 1713065530232,
           "createAt": 1713013531252
         }
       },
@@ -1401,6 +1403,26 @@
           "updateAt": 1713023370575,
           "createAt": 1713023356330
         }
+      },
+      "96WQZH7SPrrSb-xheUbJV": {
+        "id": "96WQZH7SPrrSb-xheUbJV",
+        "tableId": "0Yamll1H4F9OnScVj6Yfi",
+        "name": "Tag",
+        "comment": "",
+        "dataType": "nvarchar",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1713065525416,
+          "createAt": 1713065515812
+        }
       }
     },
     "relationshipEntities": {
@@ -1499,7 +1521,7 @@
             "wMOt8JjlcjxNnyWSE36Lf"
           ],
           "x": 1522.8696,
-          "y": 838.1814,
+          "y": 862.1814,
           "direction": 8
         },
         "end": {
@@ -1555,7 +1577,7 @@
             "wMOt8JjlcjxNnyWSE36Lf"
           ],
           "x": 1086.8696,
-          "y": 702.1814,
+          "y": 714.1814,
           "direction": 1
         },
         "end": {
@@ -2322,6 +2344,15 @@
       {
         "name": 1713023366714,
         "dataType": 1713023370574
+      }
+    ],
+    "96WQZH7SPrrSb-xheUbJV": [
+      "tableColumnEntities",
+      1713065515809,
+      -1,
+      {
+        "name": 1713065518873,
+        "dataType": 1713065525415
       }
     ]
   }
