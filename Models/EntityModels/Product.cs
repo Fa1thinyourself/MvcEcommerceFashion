@@ -12,6 +12,8 @@ public class Product : BaseModel
   public string? ImageUrl { get; set; }
   [Column(TypeName = "nvarchar(256)")]
   public string? Description { get; set; }
+  [Column(TypeName = "nvarchar(2000)")]
+  public string? DetailDescription { get; set; }
   [Column(TypeName = "nvarchar(256)")]
   public string? Tag { get; set; }
   [Required]
