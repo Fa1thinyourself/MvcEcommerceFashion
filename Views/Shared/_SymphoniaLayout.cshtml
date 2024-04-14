@@ -48,8 +48,7 @@
             </li>
 
             <li class="nav-item">
-              @* # TODO: Link to Products page *@
-              <a class="nav-link" href="#">Products</a>
+              <a class="nav-link" asp-controller="Products" asp-action="Index">Products</a>
             </li>
 
             <li class="nav-item">
@@ -79,8 +78,7 @@
       <div class="row">
         <div class="col-lg-3 col-10 me-auto mb-4">
           <h4 class="text-white mb-3">
-            @* # TODO: Link to Index Page *@
-            <a href="#">SYMPHONIA</a>
+            <a asp-controller="Home" asp-action="Index">SYMPHONIA</a>
           </h4>
           <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">
             Copyright © Summer 2024 <strong>GROUP 1</strong>
@@ -90,13 +88,11 @@
 
         <div class="col-lg-5 col-8">
           <ul class="footer-menu d-flex flex-wrap">
-            @* # TODO: Link to About page *@
             <li class="footer-menu-item">
-              <a href="about.html" class="footer-menu-link"> About us</a>
+              <a asp-controller="Home" asp-action="About" class="footer-menu-link">About us</a>
             </li>
-            @* # TODO: Link to Privacy Policies page *@
             <li class="footer-menu-item">
-              <a href="#" class="footer-menu-link"> Privacy Policies</a>
+              <a asp-controller="Home" asp-action="Privacy" class="footer-menu-link">Privacy Policies</a>
             </li>
           </ul>
         </div>

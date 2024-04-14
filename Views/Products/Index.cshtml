@@ -1,0 +1,60 @@
+@model IEnumerable<MvcEcommerceFashion.Models.EntityModels.Product>
+@functions {
+  public string generateListProductClass(int count)
+  {
+    if ((count + 1) % 3 == 0)
+    {
+      return "col-lg-4 col-12";
+    }
+    return "col-lg-4 col-12 mb-3";
+  }
+}
+@{
+  var ItemCount = 0;
+  ViewData["Title"] = "Products";
+}
+
+<section class="featured-product section-padding">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 text-center">
+        <h2 class="mb-5">Products</h2>
+        <h6 class="mb-5">Home > Products</h6>
+      </div>
+      @foreach (var item in Model)
+      {
+        <div class="@generateListProductClass(ItemCount)">
+          <div class="product-thumb">
+            <a asp-action="Details" asp-route-id="@item.Id">
+              <img src="@item.ImageUrl" class="img-fluid product-image" alt="">
+            </a>
+
+            <div class="product-top d-flex">
+              @if (item.Tag != "")
+
+              {
+                <span class="product-alert me-auto">@item.Tag</span>
+              }
+              @* #TODO: this heart will do something *@
+              <a href="#" class="bi-heart-fill product-icon"></a>
+            </div>
+
+            <div class="product-info d-flex">
+              <div>
+                <h5 class="product-title mb-0">
+                  <a asp-action="Details" asp-route-id="@item.Id" class="product-title-link">@item.Name</a>
+                </h5>
+
+                <p class="product-p">@item.Description</p>
+              </div>
+
+              <small class="product-price text-muted ms-auto mt-auto mb-5">$@item.Price</small>
+            </div>
+          </div>
+        </div>
+        ItemCount++;
+      }
+    </div>
+  </div>
+</section>

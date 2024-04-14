@@ -50,16 +50,6 @@ public class ProductSeeder
         UpdatedAt = DateTime.Now,
       }, new Product
       {
-        Name = "Linen Plain Top",
-        Tag = "",
-        Description = "Nature Beauty from another world",
-        ImageUrl = "/images/product/image10.png",
-        IsOutOfStock = false,
-        Price = 45,
-        Stock = 1000,
-        UpdatedAt = DateTime.Now,
-      }, new Product
-      {
         Name = "Dotted Black Dress",
         Tag = "New Arrival",
         Description = "Original package design from our love",

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcEcommerceFashion.Data;
+using MvcEcommerceFashion.Models.EntityModels;
+using MvcEcommerceFashion.Models.ViewModels;
 
 namespace MvcEcommerceFashion.Controllers
 {
@@ -32,7 +34,25 @@ namespace MvcEcommerceFashion.Controllers
         return NotFound();
       }
 
-      return View(product);
+      var rnd = new Random();
+      const int CountItemToGet = 3;
+
+      var relatedProducts = await _context.Product
+        .Where(p => p.Id != id)
+        .ToListAsync();
+      var hashSetProductsRandom = new HashSet<Product>();
+
+      while (hashSetProductsRandom.Count < CountItemToGet)
+      {
+        var productRandom = relatedProducts[rnd.Next(relatedProducts.Count)];
+        hashSetProductsRandom.Add(productRandom);
+      }
+
+      var productDetailActionModel = new ProductsDetailActionModel{
+        Product = product,
+        RelatedProducts = [.. hashSetProductsRandom]
+      };
+      return View(productDetailActionModel);
     }
   }
 }
