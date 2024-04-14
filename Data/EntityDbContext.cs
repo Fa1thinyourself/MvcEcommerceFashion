@@ -12,9 +12,18 @@ namespace MvcEcommerceFashion.Data
     public EntityDbContext(DbContextOptions<EntityDbContext> options)
         : base(options)
     {
+
     }
 
-    public DbSet<MvcEcommerceFashion.Models.EntityModels.Product> Product { get; set; } = default!;
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      base.OnModelCreating(modelBuilder);
+      modelBuilder.Entity<Product>().Property(b => b.CreatedAt).HasDefaultValueSql("GETDATE()");
+      modelBuilder.Entity<Product>().Property(b => b.UpdatedAt).HasDefaultValueSql("GETDATE()");
+    }
+
+    public DbSet<Product> Product { get; set; } = default!;
     public DbSet<Category> Category { get; set; } = default!;
   }
+
 }

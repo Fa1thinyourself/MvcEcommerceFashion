@@ -6,11 +6,11 @@ public class BaseModel
   [Column(Order = 0)]
   public int Id { get; set; }
 
+  [Column(Order = 997)]
   [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-  [Column(Order = 998)]
-  public DateTime CreatedAt { get; set; }
+  public DateTime? CreatedAt { get; set; } = DateTime.Now;
 
+  [Column(Order = 998)]
   [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-  [Column(Order = 999)]
-  public DateTime UpdatedAt { get; set; }
+  public DateTime? UpdatedAt { get; set; }
 }
