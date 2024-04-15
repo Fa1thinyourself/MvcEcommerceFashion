@@ -20,7 +20,7 @@ namespace MvcEcommerceFashion.Controllers
       ViewData["keyword"] = keyword;
       if (keyword != null)
       {
-        return View(await _context.Product.Where(p => p.Name!.Contains(keyword)).ToListAsync());
+        return View(await _context.Product.Where(p => EF.Functions.Like(p.Name, $"%{keyword}%")).ToListAsync()); // find product by keyword in case insensitive way
       }
       return View(await _context.Product.ToListAsync());
     }
