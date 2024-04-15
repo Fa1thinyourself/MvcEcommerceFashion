@@ -4,8 +4,12 @@
     ViewData["Title"] = "Log out";
 }
 
-<header>
-    <h1>@ViewData["Title"]</h1>
+<section class="logout-container">
+  <div class="logout-image">
+    <img src="https://picsum.photos/600/800" alt="Login Image" style="max-height: 500px; width: auto;">
+  </div>
+
+  <div class="logout-form">
     @{
         if (User.Identity?.IsAuthenticated ?? false)
         {
@@ -18,4 +22,44 @@
             <p>You have successfully logged out of the application.</p>
         }
     }
-</header>
+  </div>
+</section>
+@section Styles {
+  <style>
+    /* Additional inline styles */
+    body,
+    html {
+      padding-top: 80px;
+      /* Adjusted to move content down vertically */
+      margin-left: 25px;
+    }
+
+    /* Left Side */
+    .logout-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 20px;
+      /* Add spacing between image and form */
+    }
+
+    /* Right Side */
+    .logout-container {
+      display: flex;
+      max-width: 5000px;
+      /* Adjusted width */
+      max-height: 5000px;
+      /* Adjusted height */
+      margin: auto;
+    }
+
+    .logout-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 60px;
+    }
+  </style>
+}

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="~/lib/slick/slick.css" />
   <link rel="stylesheet" href="~/css/bootstrap-icons.css">
   <link rel="stylesheet" href="~/css/symphonia.css" asp-append-version="true" />
+  @RenderSection("Styles", false)
 </head>
 
 <body>
@@ -61,10 +62,7 @@
             @* # TODO: Search Input doing absolutely nothing *@
             <input type="text" placeholder="Search products" name="search">
             <a type="submit"><i class="bi-search custom-icon me-3"></i></a>
-            @* # TODO: Link to account page *@
-            <a href="#"><i class="bi-person custom-icon me-3"></i></a>
-            @* # TODO: Link to mycart page *@
-            <a href="#"><i class=" bi-bag custom-icon"></i></a>
+            <partial name="_LoginPartial" />
           </div>
         </div>
       </div>
