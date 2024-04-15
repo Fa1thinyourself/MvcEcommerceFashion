@@ -15,8 +15,13 @@ namespace MvcEcommerceFashion.Controllers
     }
 
     // GET: Products
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string keyword)
     {
+      ViewData["keyword"] = keyword;
+      if (keyword != null)
+      {
+        return View(await _context.Product.Where(p => p.Name!.Contains(keyword)).ToListAsync());
+      }
       return View(await _context.Product.ToListAsync());
     }
 
@@ -48,11 +53,29 @@ namespace MvcEcommerceFashion.Controllers
         hashSetProductsRandom.Add(productRandom);
       }
 
-      var productDetailActionModel = new ProductsDetailActionModel{
+      var productDetailActionModel = new ProductsDetailActionModel
+      {
         Product = product,
         RelatedProducts = [.. hashSetProductsRandom]
       };
       return View(productDetailActionModel);
     }
+
+    // POST: Products/Search
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Search([Bind("Keyword")] KeywordViewModel keywordViewModel)
+    {
+      if (ModelState.IsValid)
+      {
+        return RedirectToAction(nameof(Index), new { keyword = keywordViewModel.Keyword });
+      }
+      return RedirectToAction(nameof(Index));
+    }
   }
+}
+
+public class KeywordViewModel
+{
+  public string? Keyword { get; set; }
 }

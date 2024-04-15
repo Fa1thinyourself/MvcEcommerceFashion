@@ -33,13 +33,13 @@
         </a>
 
         <div class="d-lg-none">
-          <input type="text" placeholder="Search Products" name="search">
-          <a type="submit"><i class="bi-search custom-icon me-3"></i></a>
-
-          @* # TODO: Link to Account page *@
-          <a href="#"><i class="bi-person custom-icon me-3"></i></a>
-          @* # TODO: link to Mycart page *@
-          <a href="#"><i class="bi-bag custom-icon"></i></a>
+          <form style="display: inline;" asp-controller="Products" asp-action="Search">
+            <input type="text" placeholder="Search Products" name="Keyword">
+            <button
+              style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer; outline: inherit;"
+              type="submit"><i class="bi-search custom-icon me-3"></i></button>
+          </form>
+          <partial name="_LoginPartial" />
         </div>
 
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -59,9 +59,12 @@
           </ul>
 
           <div class="d-none d-lg-block">
-            @* # TODO: Search Input doing absolutely nothing *@
-            <input type="text" placeholder="Search products" name="search">
-            <a type="submit"><i class="bi-search custom-icon me-3"></i></a>
+            <form style="display: inline;" asp-controller="Products" asp-action="Search">
+              <input type="text" placeholder="Search Products" name="Keyword">
+              <button
+                style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer; outline: inherit;"
+                type="submit"><i class="bi-search custom-icon me-3"></i></button>
+            </form>
             <partial name="_LoginPartial" />
           </div>
         </div>
